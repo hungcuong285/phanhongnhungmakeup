@@ -1,0 +1,1475 @@
+/* ============================================
+   PhanHongNhungMakeup - Affiliate Social Hub
+   Phong cách: Aesthetic Glamour Luxury (Makeup)
+   
+   Thiết kế: Rose-gold, ngọc trai, glassmorphism
+   Cấu trúc: Splash + Meta page + TikTok page
+   ============================================ */
+
+/* --- Nhập phông chữ Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* --- Biến CSS toàn cục (CSS Custom Properties) --- */
+:root {
+  /* Bảng màu chủ đạo - Rose Gold / Pearl / Nude */
+  --bg-primary: #fdf6f3;
+  --bg-card: rgba(255, 248, 245, 0.85);
+  --bg-card-solid: #fff8f5;
+  --bg-overlay: rgba(45, 30, 25, 0.45);
+  --bg-gateway: rgba(255, 252, 250, 0.92);
+
+  /* Màu chữ */
+  --text-primary: #2d1f1a;
+  --text-secondary: #7a655c;
+  --text-muted: #b5a39a;
+  --text-white: #fffaf8;
+
+  /* Màu nhấn sang trọng */
+  --accent-rosegold: #c9907d;
+  --accent-rosegold-light: #e8c4b6;
+  --accent-rosegold-dark: #a87060;
+  --accent-gold: #D4AF37;
+  --accent-gold-light: #e8cc6e;
+  --accent-gold-glow: rgba(212, 175, 55, 0.35);
+  --accent-pearl: #f5ebe5;
+  --accent-nude: #f0ddd4;
+
+  /* Gradient chính */
+  --gradient-rosegold: linear-gradient(135deg, #e8c4b6 0%, #c9907d 50%, #d4a88c 100%);
+  --gradient-pearl: linear-gradient(135deg, #fdf6f3 0%, #f5ebe5 40%, #f0ddd4 100%);
+  --gradient-gold-shimmer: linear-gradient(135deg, #D4AF37 0%, #e8cc6e 25%, #D4AF37 50%, #f0d98c 75%, #D4AF37 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 248, 245, 0.6), rgba(245, 235, 229, 0.3));
+
+  /* Màu mạng xã hội */
+  --color-tiktok: #2d1f1a;
+  --color-instagram: #c9376b;
+  --color-facebook: #1877f2;
+  --color-threads: #000000;
+  --color-meta: #0866FF;
+
+  /* Hiệu ứng bóng đổ mềm */
+  --shadow-soft: 0 4px 24px rgba(160, 120, 100, 0.1);
+  --shadow-medium: 0 8px 40px rgba(160, 120, 100, 0.15);
+  --shadow-float: 0 12px 48px rgba(160, 120, 100, 0.12);
+  --shadow-glow-gold: 0 4px 28px rgba(212, 175, 55, 0.3);
+  --shadow-glow-rose: 0 6px 32px rgba(201, 144, 125, 0.3);
+
+  /* Bo góc */
+  --border-radius: 20px;
+  --border-radius-sm: 14px;
+  --border-radius-pill: 999px;
+  --border-radius-elegant: 2px;
+
+  /* Chuyển động mượt mà */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-luxury: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* --- Reset toàn cục --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* --- Nền trang sang trọng với texture bột phấn --- */
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+  background-image:
+    linear-gradient(170deg, #fdf6f3 0%, #f5ebe5 35%, #f0ddd4 65%, #fdf6f3 100%);
+  background-attachment: fixed;
+}
+
+/* Lớp phủ texture bột phấn mịn (silk sheen) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(ellipse 100% 60% at 30% 20%, rgba(232, 196, 182, 0.2), transparent),
+    radial-gradient(ellipse 80% 50% at 70% 80%, rgba(212, 175, 55, 0.06), transparent),
+    radial-gradient(circle 2px at 20% 30%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(circle 1.5px at 60% 50%, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(circle 1px at 80% 20%, rgba(255, 255, 255, 0.35), transparent),
+    radial-gradient(circle 2px at 40% 70%, rgba(255, 255, 255, 0.25), transparent);
+  mix-blend-mode: overlay;
+  opacity: 0.7;
+}
+
+/* Hiệu ứng ánh lụa */
+body::after {
+  content: '';
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.03) 45%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(255, 255, 255, 0.03) 55%,
+    transparent 60%
+  );
+  animation: silkSheen 8s ease-in-out infinite;
+}
+
+/* --- Container chính --- */
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   TRANG SPLASH (Chọn nền tảng)
+   ============================================ */
+
+/* Container splash - căn giữa dọc toàn màn hình */
+.splash-container {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 0 24px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+/* Avatar trên splash */
+.splash-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  background: var(--gradient-rosegold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 0 3px rgba(212, 175, 55, 0.25),
+    var(--shadow-glow-rose);
+  position: relative;
+  animation: fadeInDown 0.7s ease-out;
+  overflow: hidden;
+}
+
+.splash-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.splash-avatar .avatar-placeholder {
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Viền vàng kim xung quanh avatar splash */
+.splash-avatar::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: var(--gradient-gold-shimmer);
+  background-size: 200% 200%;
+  z-index: -1;
+  opacity: 0.5;
+  animation: goldPulse 4s ease-in-out infinite;
+}
+
+/* Tên thương hiệu trên splash */
+.splash-brand {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+  animation: fadeInDown 0.7s ease-out 0.1s both;
+}
+
+/* Tagline / slogan */
+.splash-tagline {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 8px;
+  animation: fadeInDown 0.7s ease-out 0.15s both;
+}
+
+/* Bio trên splash */
+.splash-bio {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 36px;
+  line-height: 1.5;
+  max-width: 300px;
+  animation: fadeInDown 0.7s ease-out 0.2s both;
+}
+
+/* Hướng dẫn chọn nền tảng */
+.splash-prompt {
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-rosegold);
+  margin-bottom: 18px;
+  animation: fadeInUp 0.7s ease-out 0.3s both;
+}
+
+/* Nút chọn nền tảng */
+.splash-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 320px;
+  animation: fadeInUp 0.7s ease-out 0.35s both;
+}
+
+.splash-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px 24px;
+  border: 1px solid rgba(201, 144, 125, 0.15);
+  border-radius: var(--border-radius);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Hiệu ứng shimmer cho nút splash */
+.splash-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, transparent,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.12),
+    transparent
+  );
+  transition: left 0.7s ease;
+}
+
+.splash-btn:hover::before {
+  left: 100%;
+}
+
+.splash-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+}
+
+.splash-btn:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Nút Meta (Facebook/Instagram/Threads) */
+.splash-btn.meta {
+  background: linear-gradient(135deg, rgba(8, 102, 255, 0.08), rgba(200, 55, 107, 0.06));
+  color: var(--text-primary);
+}
+
+.splash-btn.meta:hover {
+  border-color: rgba(8, 102, 255, 0.25);
+}
+
+.splash-btn.meta .btn-icons {
+  display: flex;
+  gap: 8px;
+  font-size: 1.1rem;
+}
+
+.splash-btn.meta .btn-icons .fa-facebook { color: var(--color-facebook); }
+.splash-btn.meta .btn-icons .fa-instagram { color: var(--color-instagram); }
+.splash-btn.meta .btn-icons .fa-threads { color: var(--color-threads); }
+
+/* Nút TikTok */
+.splash-btn.tiktok-btn {
+  background: rgba(45, 31, 26, 0.05);
+  color: var(--text-primary);
+}
+
+.splash-btn.tiktok-btn:hover {
+  border-color: rgba(45, 31, 26, 0.2);
+}
+
+.splash-btn.tiktok-btn .btn-icons {
+  font-size: 1.2rem;
+  color: var(--color-tiktok);
+}
+
+/* Nhãn phụ trong nút splash (tên mạng xã hội) */
+.splash-btn .btn-label {
+  flex: 1;
+  text-align: left;
+}
+
+.splash-btn .btn-sublabel {
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 1px;
+}
+
+/* Mũi tên chỉ hướng */
+.splash-btn .btn-arrow {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  transition: transform var(--transition-fast);
+}
+
+.splash-btn:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+/* Footer splash */
+.splash-footer {
+  margin-top: 40px;
+  animation: fadeInUp 0.7s ease-out 0.5s both;
+}
+
+.splash-footer .footer-text {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.8px;
+}
+
+/* ============================================
+   PHẦN HEADER (Profile - dùng chung meta/tiktok)
+   ============================================ */
+.profile-header {
+  text-align: center;
+  padding: 36px 0 24px;
+  animation: fadeInDown 0.7s var(--transition-luxury);
+}
+
+/* Ảnh đại diện tròn - viền vàng kim */
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 14px;
+  position: relative;
+  background: var(--gradient-rosegold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 0 3px rgba(212, 175, 55, 0.25),
+    var(--shadow-glow-rose);
+  overflow: hidden;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-avatar .avatar-placeholder {
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.profile-avatar::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: var(--gradient-gold-shimmer);
+  background-size: 200% 200%;
+  z-index: -1;
+  opacity: 0.5;
+  animation: goldPulse 4s ease-in-out infinite;
+}
+
+.profile-name {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+
+.profile-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  background: var(--gradient-glass);
+  border: 1px solid rgba(201, 144, 125, 0.2);
+  border-radius: var(--border-radius-pill);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--accent-rosegold);
+  margin-bottom: 10px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.profile-tag i {
+  font-size: 0.7rem;
+  color: var(--accent-gold);
+}
+
+.profile-bio {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  max-width: 320px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.profile-service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 6px 16px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--accent-rosegold-dark);
+  text-decoration: none;
+  border: 1px solid var(--accent-rosegold-light);
+  border-radius: var(--border-radius-pill);
+  transition: all var(--transition-smooth);
+}
+
+.profile-service-link:hover {
+  background: var(--accent-nude);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+}
+
+.profile-service-link i {
+  font-size: 0.72rem;
+}
+
+/* ============================================
+   TIÊU ĐỀ PHẦN (Section Titles)
+   ============================================ */
+.section-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--accent-rosegold);
+  margin-bottom: 18px;
+  padding-left: 4px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 1.5px;
+  background: var(--accent-gold);
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+/* ============================================
+   PHẦN LIÊN KẾT CHÍNH (Primary Social - Nút lớn)
+   Dùng cho liên kết cùng hệ sinh thái
+   ============================================ */
+.social-primary-section {
+  margin-bottom: 28px;
+  animation: fadeInUp 0.7s ease-out 0.15s both;
+}
+
+.social-primary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Nút chính lớn - glassmorphism */
+.social-primary-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 14px;
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 144, 125, 0.12);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-primary-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  border-radius: var(--border-radius);
+}
+
+.social-primary-btn:hover,
+.social-primary-btn:active {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+  border-color: rgba(201, 144, 125, 0.25);
+}
+
+.social-primary-btn:active {
+  transform: translateY(-2px) scale(0.97);
+}
+
+.social-primary-btn .social-icon {
+  font-size: 2rem;
+  transition: transform var(--transition-bounce);
+}
+
+.social-primary-btn:hover .social-icon {
+  transform: scale(1.12);
+}
+
+.social-primary-btn .social-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
+
+.social-primary-btn .social-sublabel {
+  font-size: 0.62rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: -6px;
+}
+
+/* Badge "Mở trực tiếp" cho primary links */
+.native-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 2px 8px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--border-radius-pill);
+  font-size: 0.55rem;
+  font-weight: 500;
+  color: var(--accent-gold);
+  letter-spacing: 0.3px;
+}
+
+/* Màu riêng cho icon */
+.social-primary-btn.facebook .social-icon { color: var(--color-facebook); }
+.social-primary-btn.facebook::before { background: rgba(24, 119, 242, 0.04); }
+.social-primary-btn.facebook:hover::before { opacity: 1; }
+
+.social-primary-btn.instagram .social-icon {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.social-primary-btn.instagram::before { background: linear-gradient(135deg, rgba(240,148,51,0.04), rgba(204,35,102,0.04)); }
+.social-primary-btn.instagram:hover::before { opacity: 1; }
+
+.social-primary-btn.threads .social-icon { color: var(--color-threads); }
+.social-primary-btn.threads::before { background: rgba(0, 0, 0, 0.03); }
+.social-primary-btn.threads:hover::before { opacity: 1; }
+
+.social-primary-btn.tiktok .social-icon { color: var(--color-tiktok); }
+.social-primary-btn.tiktok::before { background: rgba(0, 0, 0, 0.03); }
+.social-primary-btn.tiktok:hover::before { opacity: 1; }
+
+/* ============================================
+   PHẦN LIÊN KẾT PHỤ (Secondary Social - Icon nhỏ)
+   Dùng cho liên kết khác hệ sinh thái
+   ============================================ */
+.social-secondary-section {
+  margin-bottom: 32px;
+  animation: fadeInUp 0.7s ease-out 0.25s both;
+}
+
+.social-secondary-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Nút icon nhỏ tròn */
+.social-secondary-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(201, 144, 125, 0.1);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  font-size: 1.15rem;
+  position: relative;
+}
+
+.social-secondary-btn:hover {
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: var(--shadow-medium);
+}
+
+.social-secondary-btn:active {
+  transform: scale(0.95);
+}
+
+/* Tooltip tên mạng xã hội */
+.social-secondary-btn .tooltip {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  pointer-events: none;
+}
+
+.social-secondary-btn:hover .tooltip {
+  opacity: 1;
+}
+
+/* Màu icon nhỏ */
+.social-secondary-btn.facebook i { color: var(--color-facebook); }
+.social-secondary-btn.instagram i {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.social-secondary-btn.threads i { color: var(--color-threads); }
+.social-secondary-btn.tiktok i { color: var(--color-tiktok); }
+
+/* ============================================
+   PHẦN SẢN PHẨM MỸ PHẨM (Product Cards)
+   ============================================ */
+.shopee-section {
+  margin-bottom: 36px;
+  animation: fadeInUp 0.7s ease-out 0.35s both;
+}
+
+.products-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Thẻ sản phẩm nổi */
+.product-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 144, 125, 0.1);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-float);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+  border-color: rgba(212, 175, 55, 0.2);
+}
+
+.product-card:active {
+  transform: translateY(-2px) scale(0.99);
+}
+
+/* Ảnh sản phẩm */
+.product-image-wrapper {
+  width: 130px;
+  min-height: 130px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-elegant);
+  background: linear-gradient(135deg, #f5ebe5 0%, #f0ddd4 50%, #e8c4b6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius-elegant);
+  transition: transform var(--transition-smooth);
+}
+
+.product-card:hover .product-image-wrapper img {
+  transform: scale(1.06);
+}
+
+.product-image-wrapper .img-placeholder {
+  font-size: 2.2rem;
+  color: rgba(201, 144, 125, 0.4);
+}
+
+/* Thông tin sản phẩm */
+.product-info {
+  flex: 1;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.product-name {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 2px rgba(212, 175, 55, 0.15);
+}
+
+/* Nút "KHÁM PHÁ NGAY" - glassmorphism */
+.product-buy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  background: rgba(212, 175, 55, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--accent-gold);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: var(--border-radius-pill);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  align-self: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-buy-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, transparent,
+    rgba(212, 175, 55, 0.15),
+    rgba(232, 204, 110, 0.3),
+    rgba(212, 175, 55, 0.15),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.product-buy-btn:hover::before { left: 100%; }
+
+.product-buy-btn:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: rgba(212, 175, 55, 0.55);
+  box-shadow: var(--shadow-glow-gold);
+  color: #b8941f;
+  transform: translateY(-1px);
+}
+
+.product-buy-btn i { font-size: 0.65rem; }
+
+/* ============================================
+   PRODUCT QUICK VIEW MODAL (Xem nhanh sản phẩm)
+   Thay thế iframe Shopee - hiển thị chi tiết
+   sản phẩm trên trang của mình
+   ============================================ */
+.quickview-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: var(--bg-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-smooth);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.quickview-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Thẻ xem nhanh */
+.quickview-card {
+  background: var(--bg-gateway);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(201, 144, 125, 0.15);
+  width: calc(100% - 32px);
+  max-width: 400px;
+  max-height: 85vh;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transform: scale(0.9) translateY(20px);
+  opacity: 0;
+  transition: all var(--transition-bounce);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-float);
+}
+
+.quickview-overlay.active .quickview-card {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* Ảnh sản phẩm lớn */
+.quickview-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, #f5ebe5 0%, #f0ddd4 50%, #e8c4b6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.quickview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quickview-image .img-placeholder {
+  font-size: 4rem;
+  color: rgba(201, 144, 125, 0.3);
+}
+
+/* Gradient fade ở đáy ảnh */
+.quickview-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(transparent, rgba(255, 252, 250, 0.6));
+}
+
+/* Nút đóng (X) trên ảnh */
+.quickview-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(201, 144, 125, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  z-index: 2;
+}
+
+.quickview-close:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-primary);
+  transform: scale(1.1);
+}
+
+/* Nội dung chi tiết */
+.quickview-content {
+  padding: 20px 24px 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.quickview-name {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+/* Đánh giá sao */
+.quickview-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.quickview-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.quickview-stars i {
+  font-size: 0.75rem;
+  color: var(--accent-gold);
+}
+
+.quickview-stars i.empty {
+  color: #ddd;
+}
+
+.quickview-rating-text {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.quickview-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin-bottom: 12px;
+  text-shadow: 0 1px 3px rgba(212, 175, 55, 0.2);
+}
+
+.quickview-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* Nút MUA TRÊN SHOPEE */
+.quickview-buy-btn {
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--gradient-rosegold);
+  color: var(--text-white);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--border-radius-sm);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-glow-rose);
+}
+
+.quickview-buy-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, transparent,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.7s ease;
+}
+
+.quickview-buy-btn:hover::before { left: 100%; }
+
+.quickview-buy-btn:hover {
+  box-shadow: 0 8px 36px rgba(201, 144, 125, 0.4);
+  transform: translateY(-2px);
+}
+
+.quickview-buy-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.quickview-buy-btn i {
+  font-size: 0.85rem;
+}
+
+/* Ghi chú nhỏ dưới nút mua */
+.quickview-note {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   GATEWAY OVERLAY (Chuyển hướng cho link XPlatform)
+   ============================================ */
+.gateway-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: var(--bg-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-smooth);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.gateway-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gateway-card {
+  background: var(--bg-gateway);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(201, 144, 125, 0.15);
+  width: calc(100% - 40px);
+  max-width: 400px;
+  border-radius: var(--border-radius);
+  padding: 36px 28px 32px;
+  transform: scale(0.9) translateY(20px);
+  opacity: 0;
+  transition: all var(--transition-bounce);
+  position: relative;
+  box-shadow: var(--shadow-float);
+}
+
+.gateway-overlay.active .gateway-card {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.gateway-deco-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: var(--gradient-rosegold);
+  box-shadow: var(--shadow-glow-rose);
+  animation: floatSmooth 3s ease-in-out infinite;
+}
+
+.gateway-deco-icon i {
+  font-size: 1.4rem;
+  color: var(--text-white);
+}
+
+.gateway-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.gateway-title i {
+  color: var(--accent-gold);
+  margin-right: 6px;
+}
+
+.gateway-message {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  padding: 0 4px;
+}
+
+.gateway-url-preview {
+  background: rgba(245, 235, 229, 0.6);
+  backdrop-filter: blur(6px);
+  border-radius: var(--border-radius-sm);
+  padding: 12px 16px;
+  margin-bottom: 24px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  word-break: break-all;
+  font-family: 'Courier New', monospace;
+  border: 1px solid rgba(201, 144, 125, 0.12);
+  max-height: 56px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gateway-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gateway-btn {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.gateway-btn.primary {
+  background: var(--gradient-rosegold);
+  color: var(--text-white);
+  font-size: 0.95rem;
+  padding: 18px 20px;
+  letter-spacing: 0.8px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: var(--shadow-glow-rose);
+}
+
+.gateway-btn.primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, transparent,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.7s ease;
+}
+
+.gateway-btn.primary:hover::before { left: 100%; }
+
+.gateway-btn.primary:hover {
+  box-shadow: 0 8px 36px rgba(201, 144, 125, 0.4);
+  transform: translateY(-2px);
+}
+
+.gateway-btn.primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.gateway-btn.secondary {
+  background: rgba(245, 235, 229, 0.6);
+  backdrop-filter: blur(6px);
+  color: var(--text-primary);
+  border: 1px solid rgba(201, 144, 125, 0.15);
+}
+
+.gateway-btn.secondary:hover {
+  background: rgba(240, 221, 212, 0.7);
+  border-color: rgba(201, 144, 125, 0.25);
+}
+
+.gateway-btn.ghost {
+  background: transparent;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 12px 20px;
+}
+
+.gateway-btn.ghost:hover {
+  color: var(--accent-rosegold-dark);
+  background: rgba(245, 235, 229, 0.4);
+}
+
+/* Thông báo Toast */
+.copy-toast {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--text-primary);
+  color: var(--text-white);
+  padding: 12px 28px;
+  border-radius: var(--border-radius-pill);
+  font-size: 0.82rem;
+  font-weight: 500;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-smooth);
+  z-index: 1100;
+  box-shadow: var(--shadow-medium);
+}
+
+.copy-toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  text-align: center;
+  padding: 28px 0 0;
+  animation: fadeInUp 0.7s ease-out 0.5s both;
+}
+
+.footer-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--accent-rosegold-light);
+  margin: 0 auto 16px;
+}
+
+.footer-text {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes silkSheen {
+  0%, 100% { transform: translateX(-30%) translateY(-30%) rotate(45deg); }
+  50% { transform: translateX(30%) translateY(30%) rotate(45deg); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes goldPulse {
+  0%, 100% { opacity: 0.5; background-position: 0% 50%; }
+  50% { opacity: 0.25; background-position: 100% 50%; }
+}
+
+@keyframes floatSmooth {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.gateway-btn.primary.loading {
+  pointer-events: none;
+  position: relative;
+}
+
+.gateway-btn.primary.loading::after {
+  content: '';
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  position: absolute;
+  right: 20px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 359px) {
+  .container { padding: 16px 14px 32px; }
+  .profile-avatar { width: 85px; height: 85px; }
+  .profile-name { font-size: 1.3rem; }
+  .social-primary-btn { padding: 18px 10px; }
+  .social-primary-btn .social-icon { font-size: 1.6rem; }
+  .product-image-wrapper { width: 105px; min-height: 105px; }
+  .splash-brand { font-size: 1.35rem; }
+}
+
+@media (min-width: 600px) {
+  .container { padding: 48px 24px 60px; }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .product-card { flex-direction: column; }
+
+  .product-image-wrapper {
+    width: 100%;
+    min-height: 180px;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #1a1210;
+    --bg-card: rgba(38, 28, 24, 0.85);
+    --bg-card-solid: #261c18;
+    --bg-gateway: rgba(38, 28, 24, 0.92);
+    --text-primary: #f5ebe5;
+    --text-secondary: #b5a39a;
+    --text-muted: #7a655c;
+    --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.25);
+    --shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.35);
+    --shadow-float: 0 12px 48px rgba(0, 0, 0, 0.3);
+    --color-tiktok: #f5ebe5;
+    --color-threads: #f5ebe5;
+  }
+
+  body {
+    background-image:
+      linear-gradient(170deg, #1a1210 0%, #231916 35%, #2a1f1a 65%, #1a1210 100%);
+  }
+
+  body::before { opacity: 0.3; }
+
+  .splash-btn.tiktok-btn { background: rgba(245, 235, 229, 0.06); }
+  .splash-btn.meta { background: linear-gradient(135deg, rgba(8, 102, 255, 0.06), rgba(200, 55, 107, 0.04)); }
+
+  .gateway-url-preview,
+  .gateway-btn.secondary {
+    background: rgba(26, 18, 16, 0.5);
+    border-color: rgba(201, 144, 125, 0.1);
+  }
+
+  .product-image-wrapper {
+    background: linear-gradient(135deg, #2a1f1a 0%, #362a24 50%, #3d2e27 100%);
+  }
+
+  .product-image-wrapper .img-placeholder { color: rgba(201, 144, 125, 0.3); }
+
+  .quickview-image {
+    background: linear-gradient(135deg, #2a1f1a 0%, #362a24 50%, #3d2e27 100%);
+  }
+
+  .quickview-close {
+    background: rgba(38, 28, 24, 0.7);
+    color: var(--text-secondary);
+    border-color: rgba(201, 144, 125, 0.15);
+  }
+
+  .native-badge {
+    background: rgba(212, 175, 55, 0.08);
+  }
+
+  .section-title { color: var(--accent-rosegold-light); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

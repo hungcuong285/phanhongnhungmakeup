@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <!-- ============================================
+       PhanHongNhungMakeup - Trang TikTok
+       Tối ưu cho: TikTok
+       
+       Primary: TikTok Kênh 1, TikTok Kênh 2
+       Secondary: FB Profile, FB Fanpage, IG, Threads
+       ============================================ -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+
+  <!-- SEO -->
+  <title>PhanHongNhungMakeup | TikTok</title>
+  <meta name="description" content="PhanHongNhungMakeup - Theo dõi trên TikTok và khám phá sản phẩm mỹ phẩm yêu thích.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="PhanHongNhungMakeup | TikTok">
+  <meta property="og:description" content="Theo dõi mình trên TikTok và khám phá sản phẩm mỹ phẩm!">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+
+  <!-- Mobile -->
+  <meta name="theme-color" content="#c9907d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="container" role="main">
+
+    <!-- ==========================================
+         HEADER
+         ========================================== -->
+    <header class="profile-header" id="profile-header">
+      <div class="profile-avatar" id="profile-avatar">
+        <i class="fa-solid fa-wand-magic-sparkles avatar-placeholder"></i>
+      </div>
+
+      <h1 class="profile-name">PhanHongNhungMakeup</h1>
+
+      <div class="profile-tag">
+        <i class="fa-solid fa-palette"></i>
+        Makeup Artist · doanh nghiệp 10m²
+      </div>
+
+      <p class="profile-bio">
+        Chuyên gia trang điểm | KOC Affiliate | Review Mỹ phẩm High-end & Drugstore.
+      </p>
+
+      <a href="#" class="profile-service-link" id="service-link">
+        <i class="fa-solid fa-sparkles"></i>
+        Dịch vụ Makeup
+      </a>
+    </header>
+
+    <!-- ==========================================
+         LIÊN KẾT CHÍNH (Primary - TikTok)
+         Mở TRỰC TIẾP vì người dùng đang trong
+         in-app browser của TikTok
+         ========================================== -->
+    <section class="social-primary-section" id="primary-social" aria-label="Liên kết chính">
+      <h2 class="section-title">Theo dõi mình</h2>
+
+      <div class="social-primary-grid">
+
+        <!-- TikTok Kênh 1 -->
+        <button class="social-primary-btn tiktok" id="btn-tiktok-1" data-url="https://www.tiktok.com/@phanhongnhungmakeup"
+          data-native="true" aria-label="TikTok Kênh 1">
+          <span class="native-badge">Mở trực tiếp</span>
+          <i class="fa-brands fa-tiktok social-icon"></i>
+          <span class="social-label">TikTok</span>
+          <span class="social-sublabel">Kênh 1</span>
+        </button>
+
+        <!-- TikTok Kênh 2 -->
+        <button class="social-primary-btn tiktok" id="btn-tiktok-2" data-url="https://www.tiktok.com/@phanhongnhung.picks"
+          data-native="true" aria-label="TikTok Kênh 2">
+          <span class="native-badge">Mở trực tiếp</span>
+          <i class="fa-brands fa-tiktok social-icon"></i>
+          <span class="social-label">TikTok</span>
+          <span class="social-sublabel">Kênh 2</span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         LIÊN KẾT PHỤ (Secondary - Meta)
+         Khác hệ sinh thái → dùng gateway redirect
+         ========================================== -->
+    <section class="social-secondary-section" id="secondary-social" aria-label="Liên kết khác">
+      <h2 class="section-title">Mạng xã hội khác</h2>
+
+      <div class="social-secondary-row">
+
+        <!-- Facebook Profile -->
+        <button class="social-secondary-btn facebook" id="btn-fb-profile" data-url="https://www.facebook.com/phanhong.nhung.16"
+          aria-label="Facebook cá nhân">
+          <i class="fa-brands fa-facebook"></i>
+          <span class="tooltip">Facebook</span>
+        </button>
+
+        <!-- Facebook Fanpage -->
+        <button class="social-secondary-btn facebook" id="btn-fb-fanpage" data-url="https://www.facebook.com/profile.php?id=61577437437876"
+          aria-label="Facebook Fanpage">
+          <i class="fa-solid fa-store"></i>
+          <span class="tooltip">Fanpage</span>
+        </button>
+
+        <!-- Instagram -->
+        <button class="social-secondary-btn instagram" id="btn-instagram" data-url="https://www.instagram.com/phanhongnhungmakeup"
+          aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+          <span class="tooltip">Instagram</span>
+        </button>
+
+        <!-- Threads -->
+        <button class="social-secondary-btn threads" id="btn-threads" data-url="https://www.threads.net/@phanhongnhungmakeup"
+          aria-label="Threads">
+          <i class="fa-brands fa-threads"></i>
+          <span class="tooltip">Threads</span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SẢN PHẨM MỸ PHẨM
+         ========================================== -->
+    <section class="shopee-section" id="shopee-section" aria-label="Sản phẩm mỹ phẩm">
+      <h2 class="section-title">Sản phẩm yêu thích</h2>
+
+      <div class="products-grid" id="products-grid">
+
+        <!-- Sản phẩm 1 -->
+        <article class="product-card" id="product-1" data-product-id="1" aria-label="Sản phẩm 1">
+          <div class="product-image-wrapper">
+            <i class="fa-solid fa-spray-can-sparkles img-placeholder"></i>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Sản phẩm 1</h3>
+            <span class="product-price">Xem giá</span>
+            <button class="product-buy-btn" id="buy-btn-1">
+              <i class="fa-solid fa-wand-sparkles"></i>
+              KHÁM PHÁ NGAY
+            </button>
+          </div>
+        </article>
+
+        <!-- Sản phẩm 2 -->
+        <article class="product-card" id="product-2" data-product-id="2" aria-label="Sản phẩm 2">
+          <div class="product-image-wrapper">
+            <i class="fa-solid fa-spray-can-sparkles img-placeholder"></i>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Sản phẩm 2</h3>
+            <span class="product-price">Xem giá</span>
+            <button class="product-buy-btn" id="buy-btn-2">
+              <i class="fa-solid fa-wand-sparkles"></i>
+              KHÁM PHÁ NGAY
+            </button>
+          </div>
+        </article>
+
+        <!-- Sản phẩm 3 -->
+        <article class="product-card" id="product-3" data-product-id="3" aria-label="Sản phẩm 3">
+          <div class="product-image-wrapper">
+            <i class="fa-solid fa-spray-can-sparkles img-placeholder"></i>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Sản phẩm 3</h3>
+            <span class="product-price">Xem giá</span>
+            <button class="product-buy-btn" id="buy-btn-3">
+              <i class="fa-solid fa-wand-sparkles"></i>
+              KHÁM PHÁ NGAY
+            </button>
+          </div>
+        </article>
+
+        <!-- Sản phẩm 4 -->
+        <article class="product-card" id="product-4" data-product-id="4" aria-label="Sản phẩm 4">
+          <div class="product-image-wrapper">
+            <i class="fa-solid fa-spray-can-sparkles img-placeholder"></i>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Sản phẩm 4</h3>
+            <span class="product-price">Xem giá</span>
+            <button class="product-buy-btn" id="buy-btn-4">
+              <i class="fa-solid fa-wand-sparkles"></i>
+              KHÁM PHÁ NGAY
+            </button>
+          </div>
+        </article>
+
+        <!-- Sản phẩm 5 -->
+        <article class="product-card" id="product-5" data-product-id="5" aria-label="Sản phẩm 5">
+          <div class="product-image-wrapper">
+            <i class="fa-solid fa-spray-can-sparkles img-placeholder"></i>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Sản phẩm 5</h3>
+            <span class="product-price">Xem giá</span>
+            <button class="product-buy-btn" id="buy-btn-5">
+              <i class="fa-solid fa-wand-sparkles"></i>
+              KHÁM PHÁ NGAY
+            </button>
+          </div>
+        </article>
+
+        <!-- Sản phẩm 6 -->
+        <article class="product-card" id="product-6" data-product-id="6" aria-label="Sản phẩm 6">
+          <div class="product-image-wrapper">
+            <i class="fa-solid fa-spray-can-sparkles img-placeholder"></i>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Sản phẩm 6</h3>
+            <span class="product-price">Xem giá</span>
+            <button class="product-buy-btn" id="buy-btn-6">
+              <i class="fa-solid fa-wand-sparkles"></i>
+              KHÁM PHÁ NGAY
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" id="site-footer">
+      <div class="footer-divider"></div>
+      <p class="footer-text">© 2024 PhanHongNhungMakeup. All Rights Reserved.</p>
+    </footer>
+
+  </main>
+
+  <!-- ==========================================
+       QUICK VIEW MODAL
+       ========================================== -->
+  <div class="quickview-overlay" id="quickview-overlay" role="dialog" aria-modal="true" aria-label="Xem nhanh sản phẩm">
+    <div class="quickview-card">
+      <div class="quickview-image" id="quickview-image">
+        <i class="fa-solid fa-spray-can-sparkles img-placeholder"></i>
+      </div>
+
+      <button class="quickview-close" id="quickview-close" aria-label="Đóng">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="quickview-content">
+        <h2 class="quickview-name" id="quickview-name">Tên sản phẩm</h2>
+
+        <div class="quickview-rating">
+          <div class="quickview-stars" id="quickview-stars"></div>
+          <span class="quickview-rating-text" id="quickview-rating-text"></span>
+        </div>
+
+        <div class="quickview-price" id="quickview-price">0₫</div>
+        <p class="quickview-desc" id="quickview-desc">Mô tả sản phẩm...</p>
+
+        <button class="quickview-buy-btn" id="quickview-buy" data-url="">
+          <i class="fa-solid fa-bag-shopping"></i>
+          MUA TRÊN SHOPEE
+        </button>
+        <p class="quickview-note">Sẽ chuyển hướng tới ứng dụng Shopee hoặc trình duyệt</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       GATEWAY OVERLAY
+       ========================================== -->
+  <div class="gateway-overlay" id="gateway-overlay" role="dialog" aria-modal="true" aria-label="Chuyển hướng liên kết">
+    <div class="gateway-card">
+      <div class="gateway-deco-icon">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+      </div>
+
+      <h2 class="gateway-title" id="gateway-title">
+        <i class="fa-solid fa-magic"></i>
+        Đang chuyển hướng...
+      </h2>
+
+      <p class="gateway-message">
+        Để trải nghiệm tốt nhất, trang này nên được mở trong trình duyệt gốc
+        (ví dụ: Safari, Chrome).
+      </p>
+
+      <div class="gateway-url-preview" id="gateway-url-preview"></div>
+
+      <div class="gateway-actions">
+        <button class="gateway-btn primary" id="redirect-direct">
+          <i class="fa-solid fa-up-right-from-square"></i>
+          MỞ TRONG ỨNG DỤNG
+        </button>
+
+        <button class="gateway-btn secondary" id="copy-link">
+          <i class="fa-regular fa-copy"></i>
+          Sao chép liên kết
+        </button>
+
+        <button class="gateway-btn ghost" id="close-gateway">
+          <i class="fa-solid fa-images"></i>
+          XEM TIẾP PORTFOLIO
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast thông báo -->
+  <div class="copy-toast" id="copy-toast" role="alert" aria-live="assertive"></div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
