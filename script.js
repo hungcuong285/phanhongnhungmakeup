@@ -445,6 +445,13 @@ function taoDeepLink(url) {
 
     // TikTok
     if (hostname.includes('tiktok.com')) {
+      // Tìm username định dạng @username
+      const match = urlObj.pathname.match(/(@[\w.-]+)/);
+      if (match) {
+        const username = match[1];
+        // Sử dụng tiktok:// để mở thẳng profile trong app iOS/Android thay vì webview
+        return `tiktok://user/profile/${username}`;
+      }
       return `snssdk1233://webview?url=${encodeURIComponent(url)}`;
     }
 
