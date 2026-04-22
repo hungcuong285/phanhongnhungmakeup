@@ -228,11 +228,24 @@ function khoiTaoSuKienLienKet() {
     });
   });
 
-  // === THẺ SẢN PHẨM → Mở Quick View ===
+  // === THẺ SẢN PHẨM (Hiển thị & Sự kiện) ===
   const productCards = document.querySelectorAll('.product-card');
   productCards.forEach((card) => {
     const productId = card.getAttribute('data-product-id');
-    if (!productId) return;
+    const product = PRODUCTS[productId];
+    if (!product) return;
+
+    // --- Render trực tiếp dữ liệu ra giao diện ---
+    const imgWrapper = card.querySelector('.product-image-wrapper');
+    if (imgWrapper && product.image) {
+      imgWrapper.innerHTML = `<img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: cover;" />`;
+    }
+
+    const nameEl = card.querySelector('.product-name');
+    if (nameEl) nameEl.textContent = product.name;
+
+    const priceEl = card.querySelector('.product-price');
+    if (priceEl) priceEl.textContent = product.price;
 
     // Click vào thẻ sản phẩm → mở Quick View
     card.addEventListener('click', (e) => {
