@@ -27,49 +27,49 @@ const DOM = {};
  */
 const PRODUCTS = {
   '1': {
-    name: 'Sản phẩm 1',
-    price: 'Xem giá',
-    image: '',
+    name: 'Đèn LED Bán Nguyệt Rạng Đông M26 30 9W 60 25W 120 50W',
+    price: '119.986₫',
+    image: 'assets/product_1.webp',
     description: 'Bấm MUA TRÊN SHOPEE để xem thông tin chi tiết và giá chính xác nhất của sản phẩm này.',
     rating: 5.0,
     affiliateLink: 'https://s.shopee.vn/AUpGXPiFwl'
   },
   '2': {
-    name: 'Sản phẩm 2',
-    price: 'Xem giá',
-    image: '',
+    name: 'Đèn Livestream Chuyên Nghiệp MARKLIVE 100X Đèn Chụp Ảnh Quay Phim Studio Công Xuất Thực 100w',
+    price: '1.648.111₫',
+    image: 'assets/product_2.webp',
     description: 'Bấm MUA TRÊN SHOPEE để xem thông tin chi tiết và giá chính xác nhất của sản phẩm này.',
     rating: 4.9,
     affiliateLink: 'https://s.shopee.vn/60NbXNnAsz'
   },
   '3': {
-    name: 'Sản phẩm 3',
-    price: 'Xem giá',
-    image: '',
+    name: 'MARKLIVE 60X Đèn Livestream Chụp Ảnh Quay Video Chuyên Nghiệp Chuẩn màu 95% Sáng Mạnh APP kết nối',
+    price: '992.132₫',
+    image: 'assets/product_3.webp',
     description: 'Bấm MUA TRÊN SHOPEE để xem thông tin chi tiết và giá chính xác nhất của sản phẩm này.',
     rating: 4.8,
     affiliateLink: 'https://s.shopee.vn/4LFNYO3evp'
   },
   '4': {
-    name: 'Sản phẩm 4',
-    price: 'Xem giá',
-    image: '',
+    name: 'Combo Đèn LED Zhiyun M40 - Hàng chính hãng',
+    price: '2.165.000₫',
+    image: 'assets/product_4.webp',
     description: 'Bấm MUA TRÊN SHOPEE để xem thông tin chi tiết và giá chính xác nhất của sản phẩm này.',
     rating: 4.9,
     affiliateLink: 'https://s.shopee.vn/9paK6bpehv'
   },
   '5': {
-    name: 'Sản phẩm 5',
-    price: 'Xem giá',
-    image: '',
+    name: 'MARKLIVE 60X Đèn Livestream Chụp Ảnh Quay Video Chuyên Nghiệp Chuẩn màu 95% Sáng Mạnh APP kết nối',
+    price: '992.132₫',
+    image: 'assets/product_5.webp',
     description: 'Bấm MUA TRÊN SHOPEE để xem thông tin chi tiết và giá chính xác nhất của sản phẩm này.',
     rating: 5.0,
     affiliateLink: 'https://s.shopee.vn/1qY2a8UgBa'
   },
   '6': {
-    name: 'Sản phẩm 6',
-    price: 'Xem giá',
-    image: '',
+    name: 'Vai kim sa 18mm, dùng trang trí, may đầm sự kiện, Vải HOT THAIMAITM',
+    price: '80.000₫',
+    image: 'assets/product_6.webp',
     description: 'Bấm MUA TRÊN SHOPEE để xem thông tin chi tiết và giá chính xác nhất của sản phẩm này.',
     rating: 4.8,
     affiliateLink: 'https://s.shopee.vn/4Aw7ASeFb0'
